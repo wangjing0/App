@@ -1,7 +1,7 @@
 import streamlit as st
 from predict_page import show_predict_page
 from explore_page import show_explore_page
-from HR_info_page import HR_info_page
+from HR_info_page import show_HR_info_page
 
 page = st.sidebar.selectbox("I Want To", ("Make a plan", "Explore", "Know some trivia"))
 
@@ -18,4 +18,5 @@ if page == "Explore":
 elif page == "Make a plan":
     show_predict_page()
 else:
-    HR_info_page()
+    show_HR_info_page()
+    

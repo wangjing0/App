@@ -15,6 +15,7 @@ def load_data():
 df = load_data()
 
 def show_explore_page():
+    width = 800
     st.title("Explore Activities")
 
     st.write(

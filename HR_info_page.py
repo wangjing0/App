@@ -3,8 +3,8 @@ import pickle
 import numpy as np
 from PIL import Image
 
-def HR_info_page():
-    width = 600
+def show_HR_info_page():
+    width = 800
     st.title("...about heart health...")
     #st.header("")
     image = Image.open('images/US_restingHR.webp')

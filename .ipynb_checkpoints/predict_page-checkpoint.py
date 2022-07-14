@@ -17,8 +17,7 @@ def load_model():
 
 gs_model1, gs_model2, X = load_model()
 
-# model was trained on xgboost version==1.5.1, 
-# version conflict
+# model was trained on xgboost version==1.5.1,  version conflict
 xgbr_model = gs_model2.best_estimator_['xgbr']
 new_attrs = ['grow_policy', 'max_bin', 'eval_metric', 'callbacks', 'early_stopping_rounds', 
              'max_cat_to_onehot', 'max_leaves', 'sampling_method']
@@ -67,9 +66,9 @@ def show_predict_page():
     
     heart_rate = st.slider("Target Heart Rate (bpm)", 50, 220, 100)
     distance_total_km = st.slider("Total Distance (km)", 1, 42, 10)
-    #speed = st.slider('Target Speed (km/h)', 1, 10, 3)
+    #speed = st.slider('Target Speed (km/h)', 1, 30, 10)
     duration_min = st.slider('Duration (min)', 5, 300, 45)
-    speed = 60*distance_total_km/duration_min # km/h
+    speed = distance_total_km/duration_min/0.6 # m/s
     start_time = datetime.now().date() # time object
     
     ok = st.button("Calculate calories")
@@ -77,7 +76,7 @@ def show_predict_page():
         X['sport'] = sport
         X['gender'] = gender
         X['heart_rate_mean'] = heart_rate
-        X['speed_mean'] = speed/3.6
+        X['speed_mean'] = speed
         X['distance_total_m'] = 1000*distance_total_km
         X['duration_s'] = 60*duration_min
         X['start_time'] = start_time
