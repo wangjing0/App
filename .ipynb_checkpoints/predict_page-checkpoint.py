@@ -9,19 +9,6 @@ from xgboost import XGBRegressor
 from xgboost import XGBClassifier
 from sklearn.pipeline import Pipeline
 
-m = st.markdown("""
-<style>
-div.stButton > button:first-child {
-    background-color: #0099ff;
-    color:#ffffff;
-}
-div.stButton > button:hover {
-    background-color: #00ff00;
-    color:#ff0000;
-    }
-</style>""", unsafe_allow_html=True)
-
-
 def load_model():
     gs_model1= joblib.load('./models/gs_model_step1_xgbc.pkl') 
     gs_model2= joblib.load('./models/gs_model_step2_xgbr.pkl') 
@@ -97,4 +84,5 @@ def show_predict_page():
         # the feature order matters in xgboost==1.6.1!!
         y = model_calorie.predict(X[features]) 
         st.subheader(f"The burnt calorie estimation is * {np.int(y)} * cal. Good job! ")
+        
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")
