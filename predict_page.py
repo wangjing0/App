@@ -82,6 +82,7 @@ def show_predict_page():
         X['start_time'] = start_time
         # the feature order matters in xgboost==1.6.1!!
         y = model_calorie.predict(X[features]) 
-        st.subheader(f"The burnt calorie estimation is * {np.int(y)} * cal. Good job! ")
+        st.subheader(f"The burnt calorie estimation is * {np.int(y)} * cal. Good job!")
+        st.subheader("燃烧吧，卡路里！！！")
         
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")
