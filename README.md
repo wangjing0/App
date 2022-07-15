@@ -1,9 +1,9 @@
 # FitApp
  **Made an application for**
+ * Make a plan and know your result.
  * Explore data across different demographic groups, activity types, and etc.
  * Learn some health facts.
- * Make a plan and know your result.
- 
+
 
 </p>
 <p align="center">
