@@ -34,8 +34,8 @@ features = ['sport', 'gender', 'heart_rate_mean', 'heart_rate_std', 'altitude_me
 
 def show_predict_page():
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")
-    st.write("### Today is "+ datetime.now(timezone.pst).date().isoformat() + ' '+ datetime.today().strftime('%A'))
-    
+    #st.write("### Today is "+ datetime.now(timezone.pst).date().isoformat() + ' '+ datetime.today().strftime('%A'))
+    st.write( "### Today is "+ datetime.fromtimestamp(now_utc/1000, tz=timezone('UTC')).astimezone(timezone('US/Pacific')) + " " + datetime.today().strftime('%A'))
     sports = (
          'bike',
          'run',
