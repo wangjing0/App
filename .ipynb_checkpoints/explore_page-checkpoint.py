@@ -26,3 +26,13 @@ def show_explore_page():
     
     image = Image.open('./images/geo_density.png')
     st.image(image, caption="Users Over the world ",use_column_width=True)
+    
+    image = Image.open('./images/hr_history.png')
+    st.image(image, caption="Heart rate history of individual user.",use_column_width=True)
+    
+    image = Image.open('./images/route_run.png')
+    st.image(image, caption="Training Route",use_column_width=True)
+    
+    image = Image.open('./images/hr_session_detail.png')
+    st.image(image, caption="Heart and altitude",use_column_width=True)
+    
