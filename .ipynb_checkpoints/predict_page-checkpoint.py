@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import joblib
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import numpy as np
 import pandas as pd
 import xgboost
@@ -34,8 +34,10 @@ features = ['sport', 'gender', 'heart_rate_mean', 'heart_rate_std', 'altitude_me
 
 def show_predict_page():
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")
-    #st.write("### Today is "+ datetime.now(timezone.pst).date().isoformat() + ' '+ datetime.today().strftime('%A'))
-    st.write( "### Today is "+ datetime.fromtimestamp(now_utc/1000, tz=timezone('UTC')).astimezone(timezone('US/Pacific')).isoformat + " " + datetime.today().strftime('%A'))
+    timezone_offset = -8.0  # Pacific Standard Time (UTC−08:00)
+    tzinfo = timezone(timedelta(hours=timezone_offset))
+    st.write( "### Today is "+ datetime.now(tzinfo).date().isoformat() + " " + datetime.today().strftime('%A'))
+
     sports = (
          'bike',
          'run',
