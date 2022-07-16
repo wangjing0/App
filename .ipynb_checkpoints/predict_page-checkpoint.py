@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import joblib
-from datetime import datetime, date
+from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
 import xgboost
@@ -34,7 +34,7 @@ features = ['sport', 'gender', 'heart_rate_mean', 'heart_rate_std', 'altitude_me
 
 def show_predict_page():
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")
-    st.write("### Today is "+datetime.now().date().isoformat() + ' '+ datetime.today().strftime('%A'))
+    st.write("### Today is "+ datetime.now(timezone.utc).astimezone().isoformat() + ' '+ datetime.today().strftime('%A'))
     
     sports = (
          'bike',
@@ -83,6 +83,6 @@ def show_predict_page():
         # the feature order matters in xgboost==1.6.1!!
         y = model_calorie.predict(X[features]) 
         st.subheader(f"The burnt calorie estimation is * {np.int(y)} * cal. Good job!")
-    
-    st.subheader("燃烧吧，卡路里！！！")    
+        st.subheader("燃烧吧，卡路里！！！")
+        
     st.title("🏃 🚴 🏇 🏂 🏌️ 🏄 🚣 🏊 ⛹️  🏋️ 🤸 🤼 🤽 ")

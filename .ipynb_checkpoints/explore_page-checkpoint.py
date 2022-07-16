@@ -37,7 +37,7 @@ def show_explore_page():
     
     st.write(
     """
-    ### Training Route example
+    ### Example training route
     """
     )
     image = Image.open('./images/route_run.png')
