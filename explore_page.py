@@ -24,7 +24,7 @@ def show_explore_page():
     """
     )
     
-    image = Image.open('./images/geo_density.jpeg')
+    image = Image.open('./images/geo_density_.png')
     st.image(image, caption="Users Over the world ",use_column_width=True)
     
     image = Image.open('./images/hr_history.png')
