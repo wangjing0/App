@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 def show_HR_info_page():
-    width = 800
+    width = 700
     st.title("...about heart health...")
     #st.header("")
     image = Image.open('images/US_restingHR.webp')
