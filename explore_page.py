@@ -27,13 +27,6 @@ def show_explore_page():
     image = Image.open('./images/geo_density_.png')
     st.image(image, caption='',use_column_width=True)
     
-    st.write(
-    """
-    ### Heart rate history of individual user
-    """
-    )
-    image = Image.open('./images/hr_history.png')
-    st.image(image, caption='',use_column_width=True)
     
     st.write(
     """
@@ -41,6 +34,14 @@ def show_explore_page():
     """
     )
     image = Image.open('./images/route_run.png')
+    st.image(image, caption='',use_column_width=True)
+    
+    st.write(
+    """
+    ### Heart rate history of individual user
+    """
+    )
+    image = Image.open('./images/hr_history.png')
     st.image(image, caption='',use_column_width=True)
     
     
