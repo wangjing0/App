@@ -20,7 +20,7 @@ def show_explore_page():
 
     st.write(
     """
-    ###Geographic distribution of our users over the world
+    ### Geographic distribution of our users over the world
     """
     )
     
@@ -29,7 +29,7 @@ def show_explore_page():
     
     st.write(
     """
-    ###Heart rate history of individual user
+    ### Heart rate history of individual user
     """
     )
     image = Image.open('./images/hr_history.png')
@@ -37,7 +37,7 @@ def show_explore_page():
     
     st.write(
     """
-    ###Training Route example
+    ### Training Route example
     """
     )
     image = Image.open('./images/route_run.png')
@@ -46,7 +46,7 @@ def show_explore_page():
     
     st.write(
     """
-    ###Heart rate and Altitude
+    ### Heart rate and Altitude
     """
     )
     image = Image.open('./images/hr_session_detail.png')
